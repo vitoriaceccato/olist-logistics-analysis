@@ -2,7 +2,7 @@
 
 ## 🎯 Objective
 
-Identify structural causes of delivery delays across ~96k delivered orders from Olist marketplace data.
+Identify and quantify structural drivers of delivery delays across ~96k delivered orders, prioritizing business impact at route level.
 
 ---
 
@@ -21,14 +21,14 @@ Identify structural causes of delivery delays across ~96k delivered orders from 
 
 1. **Transport is the main bottleneck**, presenting the highest mean and variance.
 2. ~4.4% of orders exceed 30 days (IQR-based extreme delays).
-3. Interstate routes significantly increase delay risk.
+3. Interstate routes increase delay risk significantly, concentrating the highest absolute impact.
 4. Route (origin → destination) explains delays better than isolated origin or destination (lowest MAE = 0.0465).
 
 ---
 
 ## 🏆 Strategic Conclusion
 
-Delivery delays are structural to the logistics network, not isolated regional issues.
+Delivery delays are structural to the logistics network rather than isolated regional issues.
 
 Prioritizing critical routes generates greater business impact than acting on individual states.
 
