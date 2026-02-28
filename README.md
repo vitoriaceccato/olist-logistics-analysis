@@ -1,87 +1,65 @@
 # 📦 Olist Logistics Delay Analysis
 
-## 🎯 Objective
-
-Identify and quantify structural drivers of delivery delays across ~96k delivered orders, prioritizing business impact at route level.
-
----
-
-## 🧠 Approach
-
-- Correct grain definition (1 row = 1 delivered order)
-- Lead time calculation and validation
-- Process decomposition (approval → dispatch → transport)
-- Outlier detection using IQR
-- Route-level impact prioritization (absolute impact vs global benchmark)
-- Statistical validation using MAE
+## 🎯 Business Question  
+What structurally drives extreme delivery delays, and where should operations prioritize intervention?
 
 ---
 
-## 📊 Key Findings
-
-1. **Transport is the main bottleneck**, presenting the highest mean (9.28 days) and variance among all stages.
-
-2. ~**4.4% of delivered orders exceed 30 days**, based on IQR outlier detection — indicating that delays are concentrated in the tail rather than evenly distributed.
-
-3. **Geography is a structural driver of delay**:
-   - North: 11.8% delay rate  
-   - Northeast: 8.22%  
-   - Southeast: 1.71%  
-
-4. **Interstate routes show nearly 9x higher probability of extreme delay** compared to intrastate routes (3.9% vs 0.4%).
-
-5. **SP is the critical logistics hub**:
-   All top critical routes by excess delay originate from São Paulo (e.g., SP → RJ, SP → BA, SP → PA, SP → CE).
-
-6. **Route (origin → destination) explains delay better than isolated origin or destination**:
-   - Route MAE: 0.0465  
-   - Destination MAE: 0.0496  
-   - Origin MAE: 0.0516  
+## 📊 Dataset  
+~96K delivered orders  
+Grain: 1 row = 1 delivered order  
+Metric: Lead time (purchase → delivery)
 
 ---
 
-## 🧩 Why Absolute Impact Matters
+## 🔎 Core Findings
 
-Some routes have very high relative risk (lift), but the largest business impact comes from routes that combine:
+### 1️⃣ Transport is the bottleneck  
+Highest mean (9.28 days) and highest variance across process stages.
 
-- High volume  
-- Above-benchmark delay rate  
+### 2️⃣ Delays are tail-driven  
+4.4% of orders exceed 30 days (IQR-based threshold).  
+Performance instability is concentrated in extreme cases, not the average.
 
-Example:
-SP → RJ generates significantly more **excess delays** than SP → PA, despite SP → PA having higher relative lift.
+### 3️⃣ Geography materially increases risk  
+Interstate orders have ~9x higher extreme delay probability  
+(3.9% vs 0.4% intrastate).
 
-Business prioritization should focus on **excess delays vs global benchmark**, not only percentages.
+North (11.8%) and Northeast (8.2%) show structurally higher delay rates.
 
----
+### 4️⃣ Route concentration drives impact  
+Top excess-delay routes all originate from São Paulo:
 
-## ✅ Executive Recommendations
+SP → RJ  
+SP → BA  
+SP → PA  
+SP → CE  
 
-1. **Prioritize operational improvements / SLA review on SP → RJ and SP → BA**
-   - High volume + high excess delays.
+High volume + above-benchmark delay rate = highest operational impact.
 
-2. **Review logistics structure for SP → North/Northeast routes**
-   - Evaluate carrier performance, routing strategy, hub allocation, and ETA calibration.
+### 5️⃣ Route explains delay better than isolated geography  
+MAE comparison:
 
-3. **Implement continuous route-level monitoring**
-   - Track excess delays against global benchmark to guide prioritization.
+Route (origin + destination): **0.0465**  
+Destination only: 0.0496  
+Origin only: 0.0516  
+
+Delays are best explained at route level.
 
 ---
 
 ## 🏆 Strategic Conclusion
 
-Delivery delays are structural to the logistics network rather than isolated regional issues.
+Delivery delays are structural to the logistics network.
 
-The strongest explanatory factor is the **route (origin → destination)**, not individual states in isolation.
-
-Prioritizing high-impact routes generates greater business value than acting at state level.
+Route-level prioritization generates higher business impact than state-level intervention.
 
 ---
 
-## 🛠 Tools & Techniques
+## 🛠 Methods
 
 SQL (DuckDB)  
 Relational modeling  
-Descriptive statistics  
 IQR outlier detection  
-Absolute impact prioritization  
-Mean Absolute Error (MAE)
+Excess delay vs global benchmark  
+Mean Absolute Error (MAE) validation
