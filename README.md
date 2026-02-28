@@ -1,65 +1,65 @@
-# 📦 Olist Logistics Delay Analysis
+# 📦 Olist Logistics Delay Analysis  
 
 ## 🎯 Business Question  
-What structurally drives extreme delivery delays, and where should operations prioritize intervention?
+What structurally drives extreme delivery delays, and where should operational efforts be prioritized for maximum impact?
 
 ---
 
 ## 📊 Dataset  
 ~96K delivered orders  
 Grain: 1 row = 1 delivered order  
-Metric: Lead time (purchase → delivery)
+Primary metric: Lead time (purchase → delivery)
 
 ---
 
-## 🔎 Core Findings
+## 🔎 Core Findings  
 
-### 1️⃣ Transport is the bottleneck  
-Highest mean (9.28 days) and highest variance across process stages.
+### 1️⃣ Transport is the structural bottleneck  
+Highest mean (9.28 days) and highest variability among all process stages.
 
-### 2️⃣ Delays are tail-driven  
+### 2️⃣ Delays are tail-driven, not average-driven  
 4.4% of orders exceed 30 days (IQR-based threshold).  
-Performance instability is concentrated in extreme cases, not the average.
+Performance instability is concentrated in extreme cases rather than the core flow.
 
-### 3️⃣ Geography materially increases risk  
-Interstate orders have ~9x higher extreme delay probability  
+### 3️⃣ Geography materially increases delay risk  
+Interstate orders show ~9x higher extreme-delay probability  
 (3.9% vs 0.4% intrastate).
 
-North (11.8%) and Northeast (8.2%) show structurally higher delay rates.
+North (11.8%) and Northeast (8.2%) exhibit structurally elevated delay rates.
 
-### 4️⃣ Route concentration drives impact  
-Top excess-delay routes all originate from São Paulo:
+### 4️⃣ Route concentration drives operational impact  
+Top excess-delay routes originate from São Paulo:
 
-SP → RJ  
-SP → BA  
-SP → PA  
-SP → CE  
+- SP → RJ  
+- SP → BA  
+- SP → PA  
+- SP → CE  
 
-High volume + above-benchmark delay rate = highest operational impact.
+High volume combined with above-benchmark delay rates generates the greatest operational burden.
 
-### 5️⃣ Route explains delay better than isolated geography  
+### 5️⃣ Route explains delays better than isolated geography  
 MAE comparison:
 
-Route (origin + destination): **0.0465**  
-Destination only: 0.0496  
-Origin only: 0.0516  
+- Route (origin + destination): **0.0465**  
+- Destination only: 0.0496  
+- Origin only: 0.0516  
 
-Delays are best explained at route level.
-
----
-
-## 🏆 Strategic Conclusion
-
-Delivery delays are structural to the logistics network.
-
-Route-level prioritization generates higher business impact than state-level intervention.
+Delays are best explained at the route level rather than by origin or destination alone.
 
 ---
 
-## 🛠 Methods
+## 🏆 Strategic Conclusion  
 
-SQL (DuckDB)  
-Relational modeling  
-IQR outlier detection  
-Excess delay vs global benchmark  
-Mean Absolute Error (MAE) validation
+Delivery delays are structural to the logistics network design rather than isolated regional inefficiencies.
+
+Route-level prioritization offers materially higher business leverage than state-level intervention.
+
+---
+
+## 🛠 Methods  
+
+- SQL (DuckDB)  
+- Relational modeling  
+- IQR-based outlier detection  
+- Excess delays vs global benchmark  
+- Mean Absolute Error (MAE) validation  
