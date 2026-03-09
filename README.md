@@ -61,6 +61,21 @@ Route-level prioritization offers materially higher business leverage than state
 
 ---
 
+## 📁 Project Structure
+olist-logistics-analysis
+│
+├── sql/
+│   ├── 01_olist_logistics_portfolio.sql
+│   └── 02_lead_time_metrics.sql
+│
+├── dashboard/
+│   └── olist_logistics_dashboard.pbix
+│
+├── images/
+│   └── dashboard_overview.png
+│
+└── README.md
+
 ## 🛠 Methods  
 
 - SQL (DuckDB)  
@@ -68,3 +83,11 @@ Route-level prioritization offers materially higher business leverage than state
 - IQR-based outlier detection  
 - Excess delays vs global benchmark  
 - Mean Absolute Error (MAE) validation  
+
+## 📈 Skills Demonstrated
+
+- SQL analytics
+- Logistics performance analysis
+- Outlier detection using IQR
+- Route-level operational diagnostics
+- Data storytelling for operational decision-making
