@@ -62,6 +62,7 @@ Route-level prioritization offers materially higher business leverage than state
 ---
 
 ## 📁 Project Structure
+```text
 olist-logistics-analysis
 │
 ├── sql/
@@ -75,6 +76,7 @@ olist-logistics-analysis
 │   └── dashboard_overview.png
 │
 └── README.md
+```
 
 ## 🛠 Methods  
 
