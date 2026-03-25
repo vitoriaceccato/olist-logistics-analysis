@@ -78,13 +78,17 @@ olist-logistics-analysis
 └── README.md
 ```
 
+---
+
 ## 🛠 Methods  
 
 - SQL (DuckDB)  
 - Relational modeling  
 - IQR-based outlier detection  
 - Excess delays vs global benchmark  
-- Mean Absolute Error (MAE) validation  
+- Mean Absolute Error (MAE) validation
+
+---
 
 ## 📈 Skills Demonstrated
 
