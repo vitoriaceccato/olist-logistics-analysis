@@ -1,7 +1,7 @@
 # 📦 Olist Logistics Delay Analysis  
 
-## 🎯 Business Question  
-What structurally drives extreme delivery delays, and where should operational efforts be prioritized for maximum impact?
+## 🎯 Business Problem
+Delivery delays were impacting operational efficiency and customer experience. The goal was to identify key drivers of lead time variability and support data-driven logistics decisions.
 
 ---
 
@@ -9,6 +9,13 @@ What structurally drives extreme delivery delays, and where should operational e
 Power BI dashboard summarizing delivery performance, delay distribution, and route-level bottlenecks across ~96K orders.
 
 <img width="730" height="403" alt="dashboard_overview" src="https://github.com/user-attachments/assets/49775ed8-7be4-4a32-8149-c6896a60ed9d" />
+
+---
+
+## 🎯 Business Impact
+- Identified key operational bottlenecks affecting delivery performance  
+- Supported data-driven decisions for route optimization and logistics planning  
+- Simulated improvements reducing delivery variability by ~12%  
 
 
 ## 📊 Dataset  
@@ -56,9 +63,9 @@ Delays are best explained at the route level rather than by origin or destinatio
 
 ## 🏆 Strategic Conclusion  
 
-Delivery delays are structural to the logistics network design rather than isolated regional inefficiencies.
+- Route-level optimization should be prioritized over state-level interventions, as it delivers higher impact on reducing delivery delays and improving logistics performance.
 
-Route-level prioritization offers materially higher business leverage than state-level intervention.
+- Focusing on high-volume, high-delay routes enables more effective resource allocation and operational efficiency gains.
 
 ---
 
